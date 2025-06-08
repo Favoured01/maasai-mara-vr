@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GlobeVista - Maasai Mara VR Scene</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- 360-degree image as the scene background -->
+      <a-sky src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" rotation="0 -130 0"></a-sky>
+
+      <!-- Welcome Text -->
+      <a-text value="Welcome to Maasai Mara" position="-2 2 -4" width="6" color="#FFD700"></a-text>
+
+      <!-- Lion Info Hotspot -->
+      <a-sphere position="1 1.25 -3" radius="0.3" color="#FFC107"
+                event-set__enter="_event: mouseenter; scale: 1.2 1.2 1.2"
+                event-set__leave="_event: mouseleave; scale: 1 1 1">
+        <a-animation attribute="rotation" to="0 360 0" dur="5000" repeat="indefinite"></a-animation>
+        <a-text value="Lion" align="center" position="0 -0.6 0" color="#000"></a-text>
+      </a-sphere>
+
+      <!-- Ambient Audio -->
+      <a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true" loop="true"></a-sound>
+
+    </a-scene>
+  </body>
+</html>
